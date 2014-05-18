@@ -3,7 +3,6 @@ body{
 	padding:0;
 }
 .images-collection{
-	width: 500px ;
-	margin-left: auto ;
-	margin-right: auto ;
+	width: 700px;
+	margin: 0 auto;
 }
