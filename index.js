@@ -30,4 +30,9 @@ http.createServer(function(req, res) {
         res.write(fs.readFileSync(__dirname + '/static/index.html'));
         res.end();
     }
+	if (url === '/static/glitch-canvas.min.js') {
+        res.writeHead(200, {'Content-Type': 'text/javascript'});
+        res.write(fs.readFileSync(__dirname + '/static/glitch-canvas.min.js'));
+        res.end();
+    }
 }).listen(80);
