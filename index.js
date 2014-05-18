@@ -3,6 +3,7 @@ var fs = require('fs');
 var parser = require('url');
 var mongoose = require('mongoose');
 var querystring = require('querystring');
+var ejs = require('ejs');
 
 mongoose.connect('mongodb://localhost/app');
 var Photo = mongoose.model('Photo', { user: String });
@@ -29,10 +30,19 @@ function saveImage(req, res) {
 	})
 }
 
+function renderFeed(req, res){
+	Photo.find({}, null, function(error, photos){
+		res.writeHead(200, {'Content-Type': 'text/json'});
+		res.write(JSON.stringify(photos));
+		res.end();
+	} );
+}
+
+
 http.createServer(function(req, res) {
     var url = parser.parse(req.url).pathname;
     if (url === '/feed') {
-        res.send(200);
+		renderFeed(req, res);
     }
     if (url === '/saveimage') {
         saveImage(req, res);
