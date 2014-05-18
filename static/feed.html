@@ -10,7 +10,7 @@
         <div class="user-name">
             <%= photos[n].user %>
         </div>
-        <img src="/images/<%= photos[n]._id %>.jpg" />
+        <a href="/photo/<%= photos[n]._id %>"><img src="/images/<%= photos[n]._id %>.jpg" /></a>
     </div>
 <% } %>
 </div>

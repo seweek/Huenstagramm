@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="/static/photo.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="image-container">
+	<img src="/images/<%= photoid %>.jpg" />
+</div>
+<div class="comment-container">
+<% for (var n = 0; n < comments.length; n++) { %>
+    <div class="image-container">
+        <div class="user-name">
+            <%= comments[n].user %>
+        </div>
+        <div class="commenttext"><%= comments[n].content %> </div>
+    </div>
+<% } %>	
+</div>
+<form method="POST" action="/photo/<%= photoid %>" >
+<input name="content" type="text">
+<input type="submit">
+<input type="hidden" name="user" value="Anonymous">
+</form>
+<script src="/static/photo.js"></script>
+</body>
+</html>

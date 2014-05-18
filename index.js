@@ -7,6 +7,7 @@ var ejs = require('ejs');
 
 mongoose.connect('mongodb://localhost/app');
 var Photo = mongoose.model('Photo', { user: String });
+var Comment = mongoose.model('Comment', { user: String, content: String, photoid: String });
 
 function saveImage(req, res) {
 	var data = '';
@@ -41,11 +42,51 @@ function renderFeed(req, res){
 	} );
 }
 
+function renderPhoto(req, res, photoid){
+	var data = '';
+	var renderComments = function(){
+		Comment.find({photoid: photoid}, null, function(error, comments){
+			res.writeHead(200, {'Content-Type': 'text/html'});
+			var html = ejs.render(fs.readFileSync('./static/photo.html').toString(), {
+				comments: comments, photoid: photoid
+			})
+			res.write(html);
+			res.end();
+		} );
+	}
+	req.on('data', function(somedata){
+		data+=somedata.toString();
+	});
+	req.on('end', function(){
+		if (data){
+			var parsdata = querystring.parse(data);
+			if (parsdata.user.trim() && parsdata.content.trim()){
+				var comment = new Comment({ user: parsdata.user, content: parsdata.content });
+				comment.save(function (err, result) {
+					if (err){
+						res.end();
+						return;
+					}
+					renderComments();
+				});
+			} else {
+				renderComments();
+			}
+		} else {
+			renderComments();
+		}
+	})
+}
+
 
 http.createServer(function(req, res) {
     var url = parser.parse(req.url).pathname;
     if (url === '/feed') {
 		renderFeed(req, res);
+    }
+	urlpic = url.split('/photo/');
+	if (urlpic.length === 2) {
+		renderPhoto(req, res, urlpic[1]);
     }
     if (url === '/saveimage') {
         saveImage(req, res);
@@ -60,9 +101,19 @@ http.createServer(function(req, res) {
         res.write(fs.readFileSync(__dirname + '/static/feed.js'));
         res.end();
     }
+	if (url === '/static/photo.js') {
+        res.writeHead(200, {'Content-Type': 'text/javascript'});
+        res.write(fs.readFileSync(__dirname + '/static/photo.js'));
+        res.end();
+    }
     if (url === '/static/main.css') {
         res.writeHead(200, {'Content-Type': 'text/stylesheet'});
         res.write(fs.readFileSync(__dirname + '/static/main.css'));
+        res.end();
+    }
+	if (url === '/static/photo.css') {
+        res.writeHead(200, {'Content-Type': 'text/stylesheet'});
+        res.write(fs.readFileSync(__dirname + '/static/photo.css'));
         res.end();
     }
 	 if (url === '/static/feed.css') {
@@ -80,10 +131,10 @@ http.createServer(function(req, res) {
         res.write(fs.readFileSync(__dirname + '/static/glitch-canvas.min.js'));
         res.end();
     }
-	url = url.split('/images/');
-	if (url.length === 2) {
+	urlsplit = url.split('/images/');
+	if (urlsplit.length === 2) {
         res.writeHead(200, {'Content-Type': 'image/jpg'});
-        res.write(fs.readFileSync(__dirname + '/images/' + url[1]));
+        res.write(fs.readFileSync(__dirname + '/images/' + urlsplit[1]));
         res.end();
     }
 }).listen(80);
