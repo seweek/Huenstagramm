@@ -11,8 +11,9 @@ function saveImage(req, res) {
 	});
 	req.on('end', function(){
 		var parsdata = querystring.parse(data);
-		
-		console.log(parsdata);
+		var newimage = parsdata.imagedata.split(',').pop();
+		var buffer = new Buffer(newimage, 'base64');
+		fs.writeFileSync(__dirname + '/static/img1.jpg', buffer, 'binary');
 		res.end();
 	})
 }
@@ -43,6 +44,11 @@ http.createServer(function(req, res) {
 	if (url === '/static/glitch-canvas.min.js') {
         res.writeHead(200, {'Content-Type': 'text/javascript'});
         res.write(fs.readFileSync(__dirname + '/static/glitch-canvas.min.js'));
+        res.end();
+    }
+	if (url === '/static/img1.jpg') {
+        res.writeHead(200, {'Content-Type': 'image/jpg'});
+        res.write(fs.readFileSync(__dirname + '/static/img1.jpg'));
         res.end();
     }
 }).listen(80);
