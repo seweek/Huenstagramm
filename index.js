@@ -2,9 +2,20 @@ var http = require('http');
 var fs = require('fs');
 var parser = require('url');
 var mongoose = require('mongoose');
+var querystring = require('querystring');
+var utils = require('utils');
 
 function saveImage(req, res) {
-
+	var data = '';
+	req.on('data', function(somedata){
+		data+=somedata.toString();
+	});
+	req.on('end', function(){
+		var parsdata = querystring.parse(data);
+		
+		console.log(parsdata);
+		res.end();
+	})
 }
 
 http.createServer(function(req, res) {
