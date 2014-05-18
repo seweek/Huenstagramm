@@ -61,11 +61,10 @@ function renderPhoto(req, res, photoid){
 		data+=somedata.toString();
 	});
 	req.on('end', function(){
-		console.log(data);
 		if (data){
 			var parsdata = querystring.parse(data);
 			if (parsdata.user.trim() && parsdata.content.trim()){
-				var comment = new Comment({ user: parsdata.user, content: parsdata.content });
+				var comment = new Comment({ user: parsdata.user, content: parsdata.content, photoid: photoid });
 				comment.save(function (err, result) {
 					if (err){
 						res.end('\n');
