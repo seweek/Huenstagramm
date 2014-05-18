@@ -32,8 +32,11 @@ function saveImage(req, res) {
 
 function renderFeed(req, res){
 	Photo.find({}, null, function(error, photos){
-		res.writeHead(200, {'Content-Type': 'text/json'});
-		res.write(JSON.stringify(photos));
+		res.writeHead(200, {'Content-Type': 'text/html'});
+		var html = ejs.render(fs.readFileSync('./static/feed.html').toString(), {
+            photos: photos
+        })
+		res.write(html);
 		res.end();
 	} );
 }
