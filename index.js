@@ -3,7 +3,6 @@ var fs = require('fs');
 var parser = require('url');
 var mongoose = require('mongoose');
 var querystring = require('querystring');
-var utils = require('utils');
 
 function saveImage(req, res) {
 	var data = '';
