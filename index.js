@@ -55,9 +55,19 @@ http.createServer(function(req, res) {
         res.write(fs.readFileSync(__dirname + '/static/main.js'));
         res.end();
     }
+	if (url === '/static/feed.js') {
+        res.writeHead(200, {'Content-Type': 'text/javascript'});
+        res.write(fs.readFileSync(__dirname + '/static/feed.js'));
+        res.end();
+    }
     if (url === '/static/main.css') {
         res.writeHead(200, {'Content-Type': 'text/stylesheet'});
         res.write(fs.readFileSync(__dirname + '/static/main.css'));
+        res.end();
+    }
+	 if (url === '/static/feed.css') {
+        res.writeHead(200, {'Content-Type': 'text/stylesheet'});
+        res.write(fs.readFileSync(__dirname + '/static/feed.css'));
         res.end();
     }
     if (url === '/static/index.html') {
