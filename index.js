@@ -41,7 +41,7 @@ function renderFeed(req, res){
 		res.write(html);
 		res.end('\n');
 		return;
-	} ).sort('-date'); 
+	} ).sort('date'); 
 }
 
 function renderPhoto(req, res, photoid){
