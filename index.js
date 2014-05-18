@@ -61,6 +61,7 @@ function renderPhoto(req, res, photoid){
 		data+=somedata.toString();
 	});
 	req.on('end', function(){
+		console.log(data);
 		if (data){
 			var parsdata = querystring.parse(data);
 			if (parsdata.user.trim() && parsdata.content.trim()){
