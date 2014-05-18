@@ -33,7 +33,7 @@ function saveImage(req, res) {
 }
 
 function renderFeed(req, res){
-	Photo.find({}, null).sort('-date').exec(
+	Photo.find({}, null).sort('-_id').exec(
 		function(error, photos){
 			res.writeHead(200, {'Content-Type': 'text/html'});
 			var html = ejs.render(fs.readFileSync('./static/feed.html').toString(), {
