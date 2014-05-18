@@ -57,9 +57,10 @@ http.createServer(function(req, res) {
         res.write(fs.readFileSync(__dirname + '/static/glitch-canvas.min.js'));
         res.end();
     }
-	if (url === '/static/img1.jpg') {
+	url = url.split('/images/');
+	if (url.length === 2) {
         res.writeHead(200, {'Content-Type': 'image/jpg'});
-        res.write(fs.readFileSync(__dirname + '/static/img1.jpg'));
+        res.write(fs.readFileSync(__dirname + '/images/' + url[1]));
         res.end();
     }
 }).listen(80);
