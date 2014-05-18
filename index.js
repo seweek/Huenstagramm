@@ -4,6 +4,9 @@ var parser = require('url');
 var mongoose = require('mongoose');
 var querystring = require('querystring');
 
+mongoose.connect('mongodb://localhost/app');
+var Photo = mongoose.model('Photo', { user: String });
+
 function saveImage(req, res) {
 	var data = '';
 	req.on('data', function(somedata){
@@ -13,8 +16,16 @@ function saveImage(req, res) {
 		var parsdata = querystring.parse(data);
 		var newimage = parsdata.imagedata.split(',').pop();
 		var buffer = new Buffer(newimage, 'base64');
-		fs.writeFileSync(__dirname + '/static/img1.jpg', buffer, 'binary');
-		res.end();
+		var photo = new Photo({ user: 'Anonymous' });
+		photo.save(function (err, result) {
+			if (err){
+				res.end();
+				return;
+			}
+			console.log(result._id);
+			fs.writeFileSync(__dirname + '/images/' + result._id + '.jpg', buffer, 'binary');
+			res.end();
+		});
 	})
 }
 
