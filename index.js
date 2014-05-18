@@ -21,12 +21,12 @@ function saveImage(req, res) {
 		var photo = new Photo({ user: 'Anonymous' });
 		photo.save(function (err, result) {
 			if (err){
-				res.end();
+				res.end('\n');
 				return;
 			}
 			console.log(result._id);
 			fs.writeFileSync(__dirname + '/images/' + result._id + '.jpg', buffer, 'binary');
-			res.end();
+			res.end('\n');
 		});
 	})
 }
@@ -38,7 +38,7 @@ function renderFeed(req, res){
             photos: photos
         })
 		res.write(html);
-		res.end();
+		res.end('\n');
 	} );
 }
 
@@ -51,7 +51,7 @@ function renderPhoto(req, res, photoid){
 				comments: comments, photoid: photoid
 			})
 			res.write(html);
-			res.end();
+			res.end('\n');
 		} );
 	}
 	req.on('data', function(somedata){
@@ -64,7 +64,7 @@ function renderPhoto(req, res, photoid){
 				var comment = new Comment({ user: parsdata.user, content: parsdata.content });
 				comment.save(function (err, result) {
 					if (err){
-						res.end();
+						res.end('\n');
 						return;
 					}
 					renderComments();
@@ -94,47 +94,47 @@ http.createServer(function(req, res) {
     if (url === '/static/main.js') {
         res.writeHead(200, {'Content-Type': 'text/javascript'});
         res.write(fs.readFileSync(__dirname + '/static/main.js'));
-        res.end();
+        res.end('\n');
     }
 	if (url === '/static/feed.js') {
         res.writeHead(200, {'Content-Type': 'text/javascript'});
         res.write(fs.readFileSync(__dirname + '/static/feed.js'));
-        res.end();
+        res.end('\n');
     }
 	if (url === '/static/photo.js') {
         res.writeHead(200, {'Content-Type': 'text/javascript'});
         res.write(fs.readFileSync(__dirname + '/static/photo.js'));
-        res.end();
+        res.end('\n');
     }
     if (url === '/static/main.css') {
         res.writeHead(200, {'Content-Type': 'text/stylesheet'});
         res.write(fs.readFileSync(__dirname + '/static/main.css'));
-        res.end();
+        res.end('\n');
     }
 	if (url === '/static/photo.css') {
         res.writeHead(200, {'Content-Type': 'text/stylesheet'});
         res.write(fs.readFileSync(__dirname + '/static/photo.css'));
-        res.end();
+        res.end('\n');
     }
 	 if (url === '/static/feed.css') {
         res.writeHead(200, {'Content-Type': 'text/stylesheet'});
         res.write(fs.readFileSync(__dirname + '/static/feed.css'));
-        res.end();
+        res.end('\n');
     }
     if (url === '/static/index.html') {
         res.writeHead(200, {'Content-Type': 'text/html'});
         res.write(fs.readFileSync(__dirname + '/static/index.html'));
-        res.end();
+        res.end('\n');
     }
 	if (url === '/static/glitch-canvas.min.js') {
         res.writeHead(200, {'Content-Type': 'text/javascript'});
         res.write(fs.readFileSync(__dirname + '/static/glitch-canvas.min.js'));
-        res.end();
+        res.end('\n');
     }
 	urlsplit = url.split('/images/');
 	if (urlsplit.length === 2) {
         res.writeHead(200, {'Content-Type': 'image/jpg'});
         res.write(fs.readFileSync(__dirname + '/images/' + urlsplit[1]));
-        res.end();
+        res.end('\n');
     }
 }).listen(80);
