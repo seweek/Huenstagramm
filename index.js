@@ -27,6 +27,7 @@ function saveImage(req, res) {
 			console.log(result._id);
 			fs.writeFileSync(__dirname + '/images/' + result._id + '.jpg', buffer, 'binary');
 			res.end('\n');
+			return;
 		});
 	})
 }
@@ -39,6 +40,7 @@ function renderFeed(req, res){
         })
 		res.write(html);
 		res.end('\n');
+		return;
 	} );
 }
 
@@ -52,6 +54,7 @@ function renderPhoto(req, res, photoid){
 			})
 			res.write(html);
 			res.end('\n');
+			return;
 		} );
 	}
 	req.on('data', function(somedata){
@@ -83,58 +86,74 @@ http.createServer(function(req, res) {
     var url = parser.parse(req.url).pathname;
     if (url === '/feed') {
 		renderFeed(req, res);
+		return;
     }
 	urlpic = url.split('/photo/');
 	if (urlpic.length === 2) {
 		renderPhoto(req, res, urlpic[1]);
+		return;
     }
     if (url === '/saveimage') {
         saveImage(req, res);
+		return;
     }
     if (url === '/static/main.js') {
         res.writeHead(200, {'Content-Type': 'text/javascript'});
         res.write(fs.readFileSync(__dirname + '/static/main.js'));
         res.end('\n');
+		return;
     }
 	if (url === '/static/feed.js') {
         res.writeHead(200, {'Content-Type': 'text/javascript'});
         res.write(fs.readFileSync(__dirname + '/static/feed.js'));
         res.end('\n');
+		return;
     }
 	if (url === '/static/photo.js') {
         res.writeHead(200, {'Content-Type': 'text/javascript'});
         res.write(fs.readFileSync(__dirname + '/static/photo.js'));
         res.end('\n');
+		return;
     }
     if (url === '/static/main.css') {
         res.writeHead(200, {'Content-Type': 'text/stylesheet'});
         res.write(fs.readFileSync(__dirname + '/static/main.css'));
         res.end('\n');
+		return;
     }
 	if (url === '/static/photo.css') {
         res.writeHead(200, {'Content-Type': 'text/stylesheet'});
         res.write(fs.readFileSync(__dirname + '/static/photo.css'));
         res.end('\n');
-    }
+		return;
+	}
 	 if (url === '/static/feed.css') {
         res.writeHead(200, {'Content-Type': 'text/stylesheet'});
         res.write(fs.readFileSync(__dirname + '/static/feed.css'));
         res.end('\n');
+		return;
     }
     if (url === '/static/index.html') {
         res.writeHead(200, {'Content-Type': 'text/html'});
         res.write(fs.readFileSync(__dirname + '/static/index.html'));
         res.end('\n');
+		return;
     }
 	if (url === '/static/glitch-canvas.min.js') {
         res.writeHead(200, {'Content-Type': 'text/javascript'});
         res.write(fs.readFileSync(__dirname + '/static/glitch-canvas.min.js'));
         res.end('\n');
+		return;
     }
 	urlsplit = url.split('/images/');
 	if (urlsplit.length === 2) {
         res.writeHead(200, {'Content-Type': 'image/jpg'});
         res.write(fs.readFileSync(__dirname + '/images/' + urlsplit[1]));
         res.end('\n');
+		return;
     }
+	
+	
+	res.writeHead(404);
+	res.end('\n');
 }).listen(80);
