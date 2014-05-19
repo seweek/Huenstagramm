@@ -6,10 +6,13 @@
 	border-right: 2px solid #A6A3A3;
 }
 .image-container{
+	width: 480px;
+	margin: 0 auto;
 	padding-top: 5px;
 	padding-bottom: 5px;
 	-webkit-border-radius: 1em;
 	margin-bottom: 5px;
+	border-bottom: 2px solid #A6A3A3;
 }
 .container{
 	width: 100%;
