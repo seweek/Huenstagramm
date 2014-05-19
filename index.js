@@ -119,19 +119,19 @@ http.createServer(function(req, res) {
 		return;
     }
     if (url === '/static/main.css') {
-        res.writeHead(200, {'Content-Type': 'text/stylesheet'});
+        res.writeHead(200, {'Content-Type': 'text/css'});
         res.write(fs.readFileSync(__dirname + '/static/main.css'));
         res.end('\n');
 		return;
     }
 	if (url === '/static/photo.css') {
-        res.writeHead(200, {'Content-Type': 'text/stylesheet'});
+        res.writeHead(200, {'Content-Type': 'text/css'});
         res.write(fs.readFileSync(__dirname + '/static/photo.css'));
         res.end('\n');
 		return;
 	}
 	 if (url === '/static/feed.css') {
-        res.writeHead(200, {'Content-Type': 'text/stylesheet'});
+        res.writeHead(200, {'Content-Type': 'text/css'});
         res.write(fs.readFileSync(__dirname + '/static/feed.css'));
         res.end('\n');
 		return;
