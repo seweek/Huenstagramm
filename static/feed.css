@@ -5,9 +5,11 @@ body{
 .images-collection{
 	margin: 0 auto;
 	width: 480px;
+	position: relative;
 }
 .container{
 	width: 100%;
 	padding:0;
 	margin:0;
+	position: relative;
 }
