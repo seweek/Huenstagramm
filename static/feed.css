@@ -2,6 +2,9 @@
 	width: 480px;
 	margin: 0 auto;
 	background-color: #FFFFFF;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	-webkit-border-radius: 1em;
 }
 .container{
 	width: 100%;
