@@ -4,6 +4,7 @@
 <link href="/static/feed.css" rel="stylesheet"/>
 </head>
 <body>
+<div class="container">
 <div class="images-collection">
 <% for (var n = 0; n < photos.length; n++) { %>
     <div class="image-container">
@@ -13,6 +14,7 @@
         <a href="/photo/<%= photos[n]._id %>"><img src="/images/<%= photos[n]._id %>.jpg" /></a>
     </div>
 <% } %>
+</div>
 </div>
 <script src="/static/feed.js"></script>
 </body>
