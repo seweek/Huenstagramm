@@ -1,11 +1,8 @@
-body{
-	margin:0;
-	padding:0;
-}
 .images-collection{
 	margin: 0 auto;
 	width: 480px;
-	position: relative;
+	float: left;
+	left: -50%;
 }
 .container{
 	width: 100%;
