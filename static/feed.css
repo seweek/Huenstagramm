@@ -1,9 +1,11 @@
 .images-collection{
 	width: 480px;
 	margin: 0 auto;
+	background-color: #4D4D4D;
+	border-left: 2px solid #A6A3A3;
+	border-right: 2px solid #A6A3A3;
 }
 .image-container{
-	background-color: #FFFFFF;
 	padding-top: 5px;
 	padding-bottom: 5px;
 	-webkit-border-radius: 1em;
