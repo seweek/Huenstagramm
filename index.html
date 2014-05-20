@@ -3,11 +3,13 @@
 <head>
 <meta charset="UTF-8" />
 <script language="javascript">
-var name = localStorage.username;
-alert('Peew'+' '+localStorage.username+' '+'peew');
-if (!name) {
-    name = prompt("Nickname: ");
-    localStorage.username = name;
+window.onload = function(){
+	var name = localStorage.username;
+	alert('Peew'+' '+localStorage.username+' '+'peew');
+	if (!name) {
+		name = prompt("Nickname: ");
+		localStorage.username = name;
+	}
 }
 </script>
 <link href="/static/main.css" rel="stylesheet"/>
