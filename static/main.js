@@ -6,10 +6,11 @@ window.onload = function(){
 	var canvas = document.getElementById("image");
 	var form = document.getElementById("form");
 	var bool = false;
-	form.onsubmit = function(event){
+	form.onsubmit = function(){
 		if (bull == true){
-		event.preventDefault();
-		}
+		return false;
+		} else if (bull == true){
+		return true;
 	}
 	glitchButton.onclick = function(){
 		var ctx = canvas.getContext('2d');
