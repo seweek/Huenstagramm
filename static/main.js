@@ -8,7 +8,8 @@ window.onload = function(){
 	var bool = false;
 	form.onsubmit = function(){
 		if (bull == true){
-		return false;
+			return false;
+		}
 	}
 	glitchButton.onclick = function(){
 		var ctx = canvas.getContext('2d');
