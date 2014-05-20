@@ -6,8 +6,8 @@ window.onload = function(){
 	var canvas = document.getElementById("image");
 	var form = document.getElementById("form");
 	form.onsubmit = function(){
-		if (input.value==''){
-		return false;
+		if (input.value===''){
+		return form.submit.preventDefault();
 		}
 	}
 	glitchButton.onclick = function(){
