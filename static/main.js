@@ -7,7 +7,7 @@ window.onload = function(){
 	var form = document.getElementById("form");
 	var bool = false;
 	form.onsubmit = function(){
-		if (bull == true){
+		if (bool == false){
 			return false;
 		}
 	}
