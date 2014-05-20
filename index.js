@@ -27,7 +27,7 @@ function saveImage(req, res) {
 			}
 			console.log(result._id);
 			fs.writeFileSync(__dirname + '/images/' + result._id + '.jpg', buffer, 'binary');
-			res.writeHead(302, {'Location': '/static/feed.html'});
+			res.writeHead(302, {'Location': 'feed'});
 			res.end('\n');
 			return;
 		});
