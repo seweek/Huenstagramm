@@ -5,23 +5,38 @@ window.onload = function(){
 	var imgContainer = document.getElementById("container");
 	var canvas = document.getElementById("image");
 	var form = document.getElementById("form");
+	var amountInput = document.getElementById("amount");
+	var seedInput = document.getElementById("seed");
+	var iterationsInput = document.getElementById("iterations");
+	var qualityInput = document.getElementById("quality");
 	var bool = false;
 	var rawimg;
-	form.onsubmit = function(){
-		if (bool == false){
-			return false;
-		}
-	}
-	glitchButton.onclick = function(){
+	function glitch(){
 		var ctx;
 		var ctx = canvas.getContext('2d');
 		ctx.putImageData(rawimg, 0,0);
 		var data = ctx.getImageData(0,0,canvas.width, canvas.height);
-		glitch(data, {amount: 10, seed: 45, iterations: 30, quality: 30}, function(data){
+		glitch(data, {amount: amountInput.value, seed: seedInput.value, iterations: iterationsInput.value, quality: qualityInput.value}, function(data){
 			ctx.putImageData(data, 0, 0);
 			imagedata.value = canvas.toDataURL('image/jpg');
 		})
-		
+	}
+	amountInput.onchange = function(){
+		glitch();
+	}
+	seedInput.onchange = function(){
+		glitch();
+	}
+	iterationsInput.onchange = function(){
+		glitch();
+	}
+	qualityInput.onchange = function(){
+		glitch();
+	}
+	form.onsubmit = function(){
+		if (bool == false){
+			return false;
+		}
 	}
 	input.onchange = function(){
 		var reader = new FileReader();
