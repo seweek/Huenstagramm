@@ -4,6 +4,12 @@ window.onload = function(){
 	var glitchButton = document.getElementById("glitch");
 	var imgContainer = document.getElementById("container");
 	var canvas = document.getElementById("image");
+	var form = document.getElementById("form");
+	form.onsubmit = function(){
+		if (!input.value){
+		return false;
+		}
+	}
 	glitchButton.onclick = function(){
 		var ctx = canvas.getContext('2d');
 		var data = ctx.getImageData(0,0,canvas.width, canvas.height);
