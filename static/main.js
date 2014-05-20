@@ -19,7 +19,9 @@ window.onload = function(){
 			var img = new Image();
 			img.src = event.target.result;
 			var ctx = canvas.getContext('2d');
-			ctx.drawImage(img, 0, 0);
+			var width = img.offsetWidth;
+			var height = img.offsetHeight;
+			ctx.drawImage(img, 0, 0, width, height);
 			input.value = '';
 			imagedata.value = canvas.toDataURL('image/jpg');
 		}
