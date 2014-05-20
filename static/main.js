@@ -20,7 +20,6 @@ window.onload = function(){
 		
 	}
 	input.onchange = function(){
-		bool = true;
 		var reader = new FileReader();
 		reader.onload = function(event){
 			var img = new Image();
@@ -33,5 +32,6 @@ window.onload = function(){
 			imagedata.value = canvas.toDataURL('image/jpg');
 		}
 		reader.readAsDataURL(input.files[0]);
+		bool = true;
 	}
 }
