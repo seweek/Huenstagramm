@@ -7,7 +7,7 @@ window.onload = function(){
 	var form = document.getElementById("form");
 	form.onsubmit = function(){
 		if (!input.value){
-		form.submit.preventDefault();
+		event.preventDefault();
 		}
 	}
 	glitchButton.onclick = function(){
