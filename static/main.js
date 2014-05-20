@@ -11,6 +11,7 @@ window.onload = function(){
 	var qualityInput = document.getElementById("quality");
 	var bool = false;
 	var rawimg;
+	document.getElementById("username").value = localStorage.username;
 	function applyGlitch(){
 		var ctx;
 		var ctx = canvas.getContext('2d');
