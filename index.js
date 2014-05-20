@@ -17,8 +17,9 @@ function saveImage(req, res) {
 	req.on('end', function(){
 		var parsdata = querystring.parse(data);
 		var newimage = parsdata.imagedata.split(',').pop();
+		var newusername = parsdata.username;
 		var buffer = new Buffer(newimage, 'base64');
-		var photo = new Photo({user: username});
+		var photo = new Photo({user: newusername});
 		photo.save(function (err, result) {
 			if (err){
 				res.writeHead(302, {'Location': '/static/index.html'});
