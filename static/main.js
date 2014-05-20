@@ -5,8 +5,9 @@ window.onload = function(){
 	var imgContainer = document.getElementById("container");
 	var canvas = document.getElementById("image");
 	var form = document.getElementById("form");
+	var bool = false;
 	form.onsubmit = function(){
-		if (!input.value){
+		if (bull === true){
 		event.preventDefault();
 		}
 	}
@@ -20,6 +21,7 @@ window.onload = function(){
 		
 	}
 	input.onchange = function(){
+		bool = true;
 		var reader = new FileReader();
 		reader.onload = function(event){
 			var img = new Image();
