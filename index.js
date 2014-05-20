@@ -148,6 +148,12 @@ http.createServer(function(req, res) {
         res.end('\n');
 		return;
     }
+	if (url === './index.html') {
+        res.writeHead(200, {'Content-Type': 'text/html'});
+        res.write(fs.readFileSync(__dirname + './index.html'));
+        res.end('\n');
+		return;
+    }
 	if (url === '/static/images/upload.png') {
         res.writeHead(200, {'Content-Type': 'image/jpg'});
         res.write(fs.readFileSync(__dirname + '/static/images/upload.png'));
