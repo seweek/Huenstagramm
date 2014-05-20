@@ -2,8 +2,9 @@
 <html>
 <head>
 <meta charset="UTF-8" />
-<script language="javascript">
-window.onload = function(){
+<link href="/static/main.css" rel="stylesheet"/>
+<script language="JavaScript">
+function login(){
 	var name = localStorage.username;
 	alert('Peew'+' '+localStorage.username+' '+'peew');
 	if (!name) {
@@ -12,8 +13,10 @@ window.onload = function(){
 	}
 }
 </script>
-<link href="/static/main.css" rel="stylesheet"/>
 </head>
 <body>
+<script language="javascript">
+login();
+</script>
 </body>
 </html>
