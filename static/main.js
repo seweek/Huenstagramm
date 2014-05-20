@@ -6,12 +6,15 @@ window.onload = function(){
 	var canvas = document.getElementById("image");
 	var form = document.getElementById("form");
 	var bool = false;
+	var rawimg;
 	form.onsubmit = function(){
 		if (bool == false){
 			return false;
 		}
 	}
 	glitchButton.onclick = function(){
+		var ctx;
+		ctx.putImageData(rawimg, 0,0);
 		var ctx = canvas.getContext('2d');
 		var data = ctx.getImageData(0,0,canvas.width, canvas.height);
 		glitch(data, {amount: 10, seed: 45, iterations: 30, quality: 30}, function(data){
@@ -29,6 +32,7 @@ window.onload = function(){
 			canvas.height = img.height*(480/img.width);
 			var ctx = canvas.getContext('2d');
 			ctx.drawImage(img, 0, 0, img.width, img.height, 0, 0, 480, canvas.height);
+			rawimg = ctx.getImageData(0,0,canvas.width, canvas.height);
 			input.value = '';
 			imagedata.value = canvas.toDataURL('image/jpg');
 		}
