@@ -7,11 +7,8 @@
 <button onclick="login()">login</button>
 <script>
 function login(){
-	var name = localStorage.username;
-	if (!name) {
-		name = prompt("Nickname: ");
-		localStorage.username = name;
-	}
+	name = prompt("Nickname: ");
+	localStorage.username = name;
 	window.location = "feed";
 }
 </script>
