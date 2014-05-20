@@ -23,6 +23,7 @@ body{
 	background-color: #0A0A0A;
 	border-left: 2px solid #A6A3A3;
 	border-right: 2px solid #A6A3A3;
+	height: 100%;
 }
 .image-container{
 	width: 480px;
