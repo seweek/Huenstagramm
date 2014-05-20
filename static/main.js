@@ -11,7 +11,7 @@ window.onload = function(){
 	var qualityInput = document.getElementById("quality");
 	var bool = false;
 	var rawimg;
-	function glitch(){
+	function applyGlitch(){
 		var ctx;
 		var ctx = canvas.getContext('2d');
 		ctx.putImageData(rawimg, 0,0);
@@ -22,16 +22,16 @@ window.onload = function(){
 		})
 	}
 	amountInput.onchange = function(){
-		glitch();
+		applyGlitch();
 	}
 	seedInput.onchange = function(){
-		glitch();
+		applyGlitch();
 	}
 	iterationsInput.onchange = function(){
-		glitch();
+		applyGlitch();
 	}
 	qualityInput.onchange = function(){
-		glitch();
+		applyGlitch();
 	}
 	form.onsubmit = function(){
 		if (bool == false){
