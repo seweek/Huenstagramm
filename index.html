@@ -6,7 +6,7 @@
 <body>
 <button onclick="login()">login</button>
 <script>
-function login(){
+function login(res){
 	var name = localStorage.username;
 	if (!name) {
 		name = prompt("Nickname: ");
