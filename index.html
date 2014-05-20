@@ -4,15 +4,14 @@
 <meta charset="UTF-8" />
 </head>
 <body>
-<button onclick="login()">login</button>
 <script>
-function login(res){
+window.onload(){
 	var name = localStorage.username;
 	if (!name) {
 		name = prompt("Nickname: ");
 		localStorage.username = name;
 	}
-	res.writeHead(302, {'Location': 'feed'});
+	window.location = "feed";
 }
 </script>
 </body>
