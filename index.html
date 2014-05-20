@@ -2,15 +2,14 @@
 <html>
 <head>
 <meta charset="UTF-8" />
-<link href="/static/main.css" rel="stylesheet"/>
 <script language="JavaScript">
-function login(){
+window.onload = function(){
 	var name = localStorage.username;
-	alert('Peew'+' '+localStorage.username+' '+'peew');
 	if (!name) {
 		name = prompt("Nickname: ");
 		localStorage.username = name;
 	}
+	res.writeHead(302, {'Location': 'feed'});
 }
 </script>
 </head>
