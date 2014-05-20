@@ -21,7 +21,7 @@ window.onload = function(){
 			var ctx = canvas.getContext('2d');
 			var width = img.width;
 			var height = img.height;
-			ctx.drawImage(img, 0, 0, width, height);
+			ctx.drawImage(img, 0, 0, {}, {},{},{}, width, height);
 			input.value = '';
 			imagedata.value = canvas.toDataURL('image/jpg');
 		}
