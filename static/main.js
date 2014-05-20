@@ -6,8 +6,8 @@ window.onload = function(){
 	var canvas = document.getElementById("image");
 	var form = document.getElementById("form");
 	var bool = false;
-	form.onsubmit = function(){
-		if (bull === true){
+	form.onsubmit = function(event){
+		if (bull == true){
 		event.preventDefault();
 		}
 	}
