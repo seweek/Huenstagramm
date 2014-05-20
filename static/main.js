@@ -18,10 +18,10 @@ window.onload = function(){
 		reader.onload = function(event){
 			var img = new Image();
 			img.src = event.target.result;
-			
-			canvas.height = img.height;
+			canvas.width = 480;
+			canvas.height = img.height*(480/img.width);
 			var ctx = canvas.getContext('2d');
-			ctx.drawImage(img, 0, 0, 480);
+			ctx.drawImage(img, 0, 0, img.width, img.height, 0, 0, 480, canvas.height);
 			input.value = '';
 			imagedata.value = canvas.toDataURL('image/jpg');
 		}
