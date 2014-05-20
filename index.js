@@ -21,13 +21,13 @@ function saveImage(req, res) {
 		var photo = new Photo({ user: 'Anonymous' });
 		photo.save(function (err, result) {
 			if (err){
-				res.writeHead(200, {'Location': '/static/index.html'});
+				res.writeHead(302, {'Location': '/static/index.html'});
 				res.end('\n');
 				return;
 			}
 			console.log(result._id);
 			fs.writeFileSync(__dirname + '/images/' + result._id + '.jpg', buffer, 'binary');
-			res.writeHead(200, {'Location': '/static/feed.html'});
+			res.writeHead(302, {'Location': '/static/feed.html'});
 			res.end('\n');
 			return;
 		});
