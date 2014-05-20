@@ -2,7 +2,9 @@
 <html>
 <head>
 <meta charset="UTF-8" />
-<script language="JavaScript">
+</head>
+<body>
+<script>
 window.onload = function(){
 	var name = localStorage.username;
 	if (!name) {
@@ -11,11 +13,6 @@ window.onload = function(){
 	}
 	res.writeHead(302, {'Location': 'feed'});
 }
-</script>
-</head>
-<body>
-<script language="javascript">
-login();
 </script>
 </body>
 </html>
