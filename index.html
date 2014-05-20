@@ -4,8 +4,9 @@
 <meta charset="UTF-8" />
 </head>
 <body>
+<button onclick="login()">login</button>
 <script>
-window.onload = function(){
+function login(){
 	var name = localStorage.username;
 	if (!name) {
 		name = prompt("Nickname: ");
