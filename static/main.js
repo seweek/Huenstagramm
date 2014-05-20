@@ -6,7 +6,7 @@ window.onload = function(){
 	var canvas = document.getElementById("image");
 	var form = document.getElementById("form");
 	form.onsubmit = function(){
-		if (!input.value){
+		if (input.value==""){
 		return false;
 		}
 	}
