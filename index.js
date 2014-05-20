@@ -18,7 +18,11 @@ function saveImage(req, res) {
 		var parsdata = querystring.parse(data);
 		var newimage = parsdata.imagedata.split(',').pop();
 		var buffer = new Buffer(newimage, 'base64');
-		var photo = new Photo({ user: 'Anonymous' });
+		if (sessionStorage.getItem("username") == ''){
+			var photo = new Photo({ user: "Anonymous" });
+		} else {
+		var photo = new Photo({user: sessionStorage.getItem("username")});
+		}
 		photo.save(function (err, result) {
 			if (err){
 				res.writeHead(302, {'Location': '/static/index.html'});
