@@ -1,12 +1,14 @@
 .wrapper{
-	width: 480px;
+	width: 460px;
 	margin: 0 auto;
 }
 .text{
 	width: 65%;
 	float: left;
+	height: 15px;
 }
 .submit{
 	width: 35%;
 	float: right;
+	height: 15px;
 }
