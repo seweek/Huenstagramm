@@ -8,6 +8,13 @@
 <script>
 function login(){
 	name = prompt("Nickname: ", 'Anonymous');
+	if (name === '' || name.lenth < 3){
+		alert("Nickname must be longer.");
+		return;
+	}
+	if (name.length > 16){
+		name = name.substr(0,16);
+	}
 	localStorage.username = name;
 	window.location = "feed";
 }
