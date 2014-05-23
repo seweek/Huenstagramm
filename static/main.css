@@ -3,10 +3,15 @@
 	margin: 0 auto;
 }
 .range{
-	width: 100%;
+	width: 70%;
 	border-radius: 30px;
 	background:#f60;
 }
 .submit{
+	margin: 0 auto;
+	width: 50%;
+}
+.text{
+	text-align: left;
 	width: 30%;
 }
