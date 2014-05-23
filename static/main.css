@@ -2,14 +2,17 @@
 	width: 460px;
 	margin: 0 auto;
 }
+.input{
+	width: 100%;
+}
 .range{
+	float: right;
 	width: 70%;
 	border-radius: 30px;
 	background:#f60;
 }
 .submit{
-	margin: 0 auto;
-	width: 50%;
+	width: 100%;
 }
 .text{
 	float: left;
