@@ -12,10 +12,10 @@
 </div>
 <% for (var n = 0; n < photos.length; n++) { %>
     <div class="image-container">
-        <a href="/photo/<%= photos[n]._id %>"><img  class="feedimage"src="/images/<%= photos[n]._id %>.jpg" /></a>
 		<div class="user-name">
-           by <%= photos[n].user %>
-        </div>
+		    <%= photos[n].user %>
+		</div>
+        <a href="/photo/<%= photos[n]._id %>"><img  class="feedimage"src="/images/<%= photos[n]._id %>.jpg" /></a>
     </div>
 <% } %>
 </div>
