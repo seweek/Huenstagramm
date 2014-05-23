@@ -5,18 +5,20 @@
 <link href="/static/main.css" rel="stylesheet"/>
 </head>
 <body>
-<form id="form" method="post" action ="/saveimage">
-<input type="hidden" id="imagedata" name="imagedata">
-<input type="hidden" id="username" name="username">
-<input id ="input" type="file">
-<input id="amount" type="range" min="0" max="100" step="1" />
-<input id="seed" type="range" min="0" max="100" step="1" />
-<input id="iterations" type="range" min="0" max="100" step="1" />
-<input id="quality" type="range" min="0" max="100" step="1" />
-<input type="submit" value="save">
-</form>
-<div id="container">
-	<canvas id="image"></canvas>
+<div class="wrapper">
+	<form id="form" method="post" action ="/saveimage">
+		<input type="hidden" id="imagedata" name="imagedata">
+		<input type="hidden" id="username" name="username">
+		<input id ="input" type="file">
+		<input id="amount" class="range" type="range" min="0" max="100" step="1" />
+		<input id="seed" class="range" type="range" min="0" max="100" step="1" />
+		<input id="iterations" class="range" type="range" min="0" max="100" step="1" />
+		<input id="quality" class="range" type="range" min="0" max="100" step="1" />
+		<input type="submit" class="submit" value="save">
+	</form>
+	<div id="container">
+		<canvas id="image"></canvas>
+	</div>
 </div>
 
 
