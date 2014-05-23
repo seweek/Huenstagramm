@@ -6,10 +6,12 @@
 	width: 100%;
 }
 .rangediv{
+	height: 30px;
 	width: 70%;
 	float: right;
 }
 .range{
+	height: 30px;
 	width: 100%;
 	border-radius: 30px;
 	background:#f60;
@@ -18,6 +20,8 @@
 	width: 100%;
 }
 .text{
+	vertical-align: middle;
+	height: 30px;
 	float: left;
 	text-align: left;
 	width: 30%;
