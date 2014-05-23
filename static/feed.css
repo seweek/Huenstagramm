@@ -1,6 +1,11 @@
 body{
 	margin: 0;
 }
+.feedimage{
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+}
 .upload{
 	width: 480px;
 	height: 40px;
