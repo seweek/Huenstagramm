@@ -1,3 +1,6 @@
+body{
+	margin: 0;
+}
 .wrapper{
 	width: 460px;
 	margin: 0 auto;

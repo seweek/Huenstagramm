@@ -22,7 +22,9 @@ body{
 	margin: 0 auto;
 }
 .user-name{
-	color: #A6A3A3;
+	color: #323232;
+	font-size: 10px;
+	float: right;
 }
 .images-collection{
 	width: 460px;
