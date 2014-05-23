@@ -7,8 +7,15 @@
 <button onclick="login()">login</button>
 <script>
 function login(){
-	name = prompt("Nickname: ");
+	name = prompt("Nickname: ", 'Anonymous');
+	if (name = ''){
+		localStorage.username = 'Anonymous';
+	} else {
+		if (name.length > 16){
+		name = name.substr(0, 17);
+		}
 	localStorage.username = name;
+	}
 	window.location = "feed";
 }
 </script>

@@ -44,10 +44,10 @@ window.onload = function(){
 		reader.onload = function(event){
 			var img = new Image();
 			img.src = event.target.result;
-			canvas.width = 480;
-			canvas.height = img.height*(480/img.width);
+			canvas.width = 460;
+			canvas.height = img.height*(460/img.width);
 			var ctx = canvas.getContext('2d');
-			ctx.drawImage(img, 0, 0, img.width, img.height, 0, 0, 480, canvas.height);
+			ctx.drawImage(img, 0, 0, img.width, img.height, 0, 0, 460, canvas.height);
 			rawimg = ctx.getImageData(0,0,canvas.width, canvas.height);
 			input.value = '';
 			imagedata.value = canvas.toDataURL('image/jpg');

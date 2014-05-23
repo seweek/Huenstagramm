@@ -7,7 +7,7 @@ body{
 	border-radius: 10px;
 }
 .upload{
-	width: 480px;
+	width: 460px;
 	height: 40px;
 	background-color: #ff00a8;
 }
@@ -23,7 +23,7 @@ body{
 	margin: 0 auto;
 }
 .image-container{
-	width: 480px;
+	width: 460px;
 	margin: 0 auto;
 	padding-top: 5px;
 	padding-bottom: 5px;

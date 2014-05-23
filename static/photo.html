@@ -20,7 +20,7 @@
 <form method="POST" action="/photo/<%= photoid %>" >
 <input name="content" type="text">
 <input type="submit">
-<input type="hidden" name="user" value="Anonymous">
+<input type="hidden" name="user" value=localStorage.username>
 </form>
 <script src="/static/photo.js"></script>
 </body>
