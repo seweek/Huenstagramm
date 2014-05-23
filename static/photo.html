@@ -19,9 +19,11 @@
 	<% } %>	
 	</div>
 	<form method="POST" action="/photo/<%= photoid %>" >
-		<input class="text" name="content" type="text">
+		<div class="addcomwrapper">
+			<input class="text" name="content" type="text">
+			<input class="submit" type="submit">
+		</div>
 		<input type="hidden" id="user" name="user">
-		<input class="submit" type="submit">
 	</form>
 </div>
 <script src="/static/photo.js"></script>

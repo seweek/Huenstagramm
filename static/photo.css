@@ -4,7 +4,9 @@
 }
 .text{
 	width: 65%;
+	float: left;
 }
 .submit{
 	width: 35%;
+	float: right;
 }
