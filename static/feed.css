@@ -10,6 +10,12 @@ body{
 	width: 460px;
 	height: 40px;
 	background-color: #ff00a8;
+	-webkit-border-bottom-right-radius: 10px;
+	-webkit-border-bottom-left-radius: 10px;
+	-moz-border-radius-bottomright: 10px;
+	-moz-border-radius-bottomleft: 10px;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
 }
 .uploadimage{
 	width: 100px;
