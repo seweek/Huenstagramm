@@ -5,9 +5,12 @@
 .input{
 	width: 100%;
 }
-.range{
-	float: right;
+.rangediv{
 	width: 70%;
+	float: right;
+}
+.range{
+	width: 100%;
 	border-radius: 30px;
 	background:#f60;
 }
