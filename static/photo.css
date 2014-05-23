@@ -5,10 +5,8 @@
 .text{
 	width: 65%;
 	float: left;
-	height: 15px;
 }
 .submit{
-	width: 35%;
+	width: 30%;
 	float: right;
-	height: 15px;
 }
