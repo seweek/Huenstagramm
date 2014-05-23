@@ -3,7 +3,9 @@
 	margin: 0 auto;
 }
 .range{
-	width: 70%;
+	width: 100%;
+	border-radius: 30px;
+	background:#f60;
 }
 .submit{
 	width: 30%;
