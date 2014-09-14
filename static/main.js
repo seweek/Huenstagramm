@@ -19,7 +19,7 @@ window.onload = function(){
 		var data = ctx.getImageData(0,0,canvas.width, canvas.height);
 		glitch(data, {amount: amountInput.value, seed: seedInput.value, iterations: iterationsInput.value, quality: qualityInput.value}, function(data){
 			ctx.putImageData(data, 0, 0);
-			imagedata.value = canvas.toDataURL('image/png');
+			imagedata.value = canvas.toDataURL('image/jpg');
 		})
 	}
 	amountInput.onchange = function(){
@@ -50,7 +50,7 @@ window.onload = function(){
 			ctx.drawImage(img, 0, 0, img.width, img.height, 0, 0, 460, canvas.height);
 			rawimg = ctx.getImageData(0,0,canvas.width, canvas.height);
 			input.value = '';
-			imagedata.value = canvas.toDataURL('image/png');
+			imagedata.value = canvas.toDataURL('image/jpg');
 		}
 		reader.readAsDataURL(input.files[0]);
 		bool = true;
