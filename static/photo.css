@@ -37,5 +37,6 @@ body{
 }
 .uploadimage{
 	width: 100px;
-	margin: 0 auto;
+	margin-left: auto;
+	margin-right: auto;
 }
