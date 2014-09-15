@@ -9,7 +9,7 @@ window.onload = function(){
 	var seedInput = document.getElementById("seed");
 	var iterationsInput = document.getElementById("iterations");
 	var qualityInput = document.getElementById("quality");
-	var upbutton = document.getElementById("button");
+	var apbut = document.getElementById("button");
 	var bool = false;
 	var rawimg;
 	document.getElementById("username").value = localStorage.username;
@@ -23,7 +23,11 @@ window.onload = function(){
 			imagedata.value = canvas.toDataURL('image/jpg');
 		})
 	}
-
+	apbut.onclick = function(){
+		applyGlitch();
+	}
+	
+	
 	form.onsubmit = function(){
 		if (bool == false){
 			return false;
