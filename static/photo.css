@@ -10,6 +10,9 @@ body{
 	float: left;
 }
 .submit{
-	width: 30%;
+	width: 35%;
 	float: right;
+}
+.addcomewrapper{
+	width: 100%;
 }
