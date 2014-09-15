@@ -37,6 +37,14 @@ input[type='range']::-webkit-slider-thumb {
 	text-align: left;
 	width: 30%;
 }
+.glitchimg{
+	width: 290px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.logowrapper{
+	width: 100%;
+}
 .button {
 	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
 	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
