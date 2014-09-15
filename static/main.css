@@ -45,6 +45,10 @@ input[type='range']::-webkit-slider-thumb {
 .logowrapper{
 	width: 100%;
 }
+.signbutton{
+	margin-left: auto;
+	margin-right: auto;
+}
 .button {
 	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
 	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
