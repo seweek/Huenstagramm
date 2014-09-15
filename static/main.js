@@ -42,7 +42,7 @@ window.onload = function(){
 	}
 	input.onchange = function(){
 		var reader = new FileReader();
-		button.onclick = function(event){
+		reader.onload = function(event){
 			var img = new Image();
 			img.src = event.target.result;
 			canvas.width = 460;
