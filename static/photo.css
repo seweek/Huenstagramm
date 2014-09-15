@@ -21,3 +21,6 @@ body{
 	width: 290px;
 	margin: 0 auto;
 }
+.user-name{
+	font-weight: bold;
+}
