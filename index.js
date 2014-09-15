@@ -163,6 +163,12 @@ http.createServer(function(req, res) {
         res.end('\n');
 		return;
     }
+	if (url === '/static/images/glitchme.png') {
+        res.writeHead(200, {'Content-Type': 'image/jpg'});
+        res.write(fs.readFileSync(__dirname + '/static/images/glitchme.png'));
+        res.end('\n');
+		return;
+    }
 	if (url === '/static/images/feed.png') {
         res.writeHead(200, {'Content-Type': 'image/jpg'});
         res.write(fs.readFileSync(__dirname + '/static/images/feed.png'));
