@@ -13,18 +13,14 @@ window.onload = function(){
 	var rawimg;
 	document.getElementById("username").value = localStorage.username;
 	function applyGlitch(){
-		try{
-			var ctx;
-			var ctx = canvas.getContext('2d');
-			ctx.putImageData(rawimg, 0,0);
-			var data = ctx.getImageData(0,0,canvas.width, canvas.height);
-			glitch(data, {amount: amountInput.value, seed: seedInput.value, iterations: iterationsInput.value, quality: qualityInput.value}, function(data){
-				ctx.putImageData(data, 0, 0);
-				imagedata.value = canvas.toDataURL('image/jpg');
-			})
-		} catch(e){
-		alert("error");
-		}
+		var ctx;
+		var ctx = canvas.getContext('2d');
+		ctx.putImageData(rawimg, 0,0);
+		var data = ctx.getImageData(0,0,canvas.width, canvas.height);
+		glitch(data, {amount: amountInput.value, seed: seedInput.value, iterations: iterationsInput.value, quality: qualityInput.value}, function(data){
+			ctx.putImageData(data, 0, 0);
+			imagedata.value = canvas.toDataURL('image/jpg');
+		})
 	}
 	amountInput.onchange = function(){
 		applyGlitch();
