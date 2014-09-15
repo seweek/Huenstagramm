@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 </head>
 <body>
-<button onclick="login()">login</button>
+<button onclick="login()">Sign in!</button>
 <script>
 function login(){
 	name = prompt("Nickname: ", 'Anonymous');
@@ -16,7 +16,7 @@ function login(){
 		name = name.substr(0,16);
 	}
 	localStorage.username = name;
-	window.location = "feed";
+	window.location = "http://188.226.166.26/feed";
 }
 </script>
 </body>
