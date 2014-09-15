@@ -163,6 +163,12 @@ http.createServer(function(req, res) {
         res.end('\n');
 		return;
     }
+	if (url === '/static/images/feed.png') {
+        res.writeHead(200, {'Content-Type': 'image/jpg'});
+        res.write(fs.readFileSync(__dirname + '/static/images/feed.png'));
+        res.end('\n');
+		return;
+    }
 	if (url === '/static/glitch-canvas.min.js') {
         res.writeHead(200, {'Content-Type': 'text/javascript'});
         res.write(fs.readFileSync(__dirname + '/static/glitch-canvas.min.js'));
