@@ -18,7 +18,7 @@ window.onload = function(){
 		var ctx = canvas.getContext('2d');
 		ctx.putImageData(rawimg, 0,0);
 		var data = ctx.getImageData(0,0,canvas.width, canvas.height);
-		data.onload = function{	
+		data.onload = function{
 			glitch(data, {amount: amountInput.value, seed: seedInput.value, iterations: iterationsInput.value, quality: qualityInput.value}, function(data){
 				ctx.putImageData(data, 0, 0);
 				imagedata.value = canvas.toDataURL('image/jpg');
