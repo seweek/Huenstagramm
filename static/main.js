@@ -9,6 +9,7 @@ window.onload = function(){
 	var seedInput = document.getElementById("seed");
 	var iterationsInput = document.getElementById("iterations");
 	var qualityInput = document.getElementById("quality");
+	var upbutton = document.getElementById("button");
 	var bool = false;
 	var rawimg;
 	document.getElementById("username").value = localStorage.username;
@@ -41,7 +42,7 @@ window.onload = function(){
 	}
 	input.onchange = function(){
 		var reader = new FileReader();
-		reader.onload = function(event){
+		button.onclick = function(event){
 			var img = new Image();
 			img.src = event.target.result;
 			canvas.width = 460;
