@@ -46,10 +46,10 @@ window.onload = function(){
 			alert("loaded:)");
 			var img = new Image();
 			img.src = event.target.result;
+			var ctx = canvas.getContext('2d');
 			img.onload = function() {
 				canvas.width = 290;
-				canvas.height = img.height*(290/img.width);
-				var ctx = canvas.getContext('2d');
+				canvas.height = img.height*(290/img.width);				
 				ctx.drawImage(img, 0, 0, img.width, img.height, 0, 0, 290, canvas.height);
 				rawimg = ctx.getImageData(0,0,canvas.width, canvas.height);
 				input.value = '';
