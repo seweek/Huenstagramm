@@ -6,16 +6,15 @@ body{
 	margin: 0 auto;
 }
 .text{
-	width: 100%;
-	float: left;
+	width: 290px;
 }
 .submit{
-	width: 35%;
+	width: 100px;
 	float: right;
 	margin: 0 auto;
 }
 .addcomewrapper{
-	width: 100%;
+	width: 290px;
 }
 .image-container{
 	width: 290px;
