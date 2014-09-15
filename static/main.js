@@ -9,7 +9,6 @@ window.onload = function(){
 	var seedInput = document.getElementById("seed");
 	var iterationsInput = document.getElementById("iterations");
 	var qualityInput = document.getElementById("quality");
-	var apbut = document.getElementById("apbut");
 	var bool = false;
 	var rawimg;
 	document.getElementById("username").value = localStorage.username;
@@ -23,11 +22,18 @@ window.onload = function(){
 			imagedata.value = canvas.toDataURL('image/jpg');
 		})
 	}
-	apbut.onclick = function(){
+	amountInput.onchange = function(){
 		applyGlitch();
 	}
-	
-	
+	seedInput.onchange = function(){
+		applyGlitch();
+	}
+	iterationsInput.onchange = function(){
+		applyGlitch();
+	}
+	qualityInput.onchange = function(){
+		applyGlitch();
+	}
 	form.onsubmit = function(){
 		if (bool == false){
 			return false;
