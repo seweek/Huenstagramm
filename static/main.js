@@ -5,22 +5,25 @@ window.onload = function(){
 	var imgContainer = document.getElementById("container");
 	var canvas = document.getElementById("image");
 	var form = document.getElementById("form");
-	var amountInput = document.getElementById("amount");
-	var seedInput = document.getElementById("seed");
-	var iterationsInput = document.getElementById("iterations");
-	var qualityInput = document.getElementById("quality");
+	var button = document.getElementById("button");
 	var bool = false;
 	var rawimg;
 	document.getElementById("username").value = localStorage.username;
+	function random(){
+		return Math.floor(Math.random()*101;;)
+	}
 	function applyGlitch(){
 		var ctx;
 		var ctx = canvas.getContext('2d');
 		ctx.putImageData(rawimg, 0,0);
 		var data = ctx.getImageData(0,0,canvas.width, canvas.height);
-		glitch(data, {amount: amountInput.value, seed: seedInput.value, iterations: iterationsInput.value, quality: qualityInput.value}, function(data){
+		glitch(data, {amount: random();, seed: random();, iterations: random();, quality: random();}, function(data){
 			ctx.putImageData(data, 0, 0);
 			imagedata.value = canvas.toDataURL('image/jpg');
 		})
+	}
+	button.onclick = function(){
+		applyGlitch();
 	}
 	form.onsubmit = function(){
 		if (bool == false){
