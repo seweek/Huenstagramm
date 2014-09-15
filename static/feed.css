@@ -18,6 +18,7 @@ body{
 	border-bottom-right-radius: 10px;
 	border-bottom-left-radius: 10px;
 	margin-bottom: 10px;
+	box-shadow: 0px 2px 2px 0px rgba(50, 50, 50, 0.52);
 }
 .uploadimage{
 	width: 100px;
@@ -28,6 +29,7 @@ body{
 	font-size: 12pt;
 }
 .images-collection{
+	margin-top: 100px;
 	width: 100%;
 	margin: 0 auto;
 }
