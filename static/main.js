@@ -22,18 +22,6 @@ window.onload = function(){
 			imagedata.value = canvas.toDataURL('image/jpg');
 		})
 	}
-	amountInput.onchange = function(){
-		applyGlitch();
-	}
-	seedInput.onchange = function(){
-		applyGlitch();
-	}
-	iterationsInput.onchange = function(){
-		applyGlitch();
-	}
-	qualityInput.onchange = function(){
-		applyGlitch();
-	}
 	form.onsubmit = function(){
 		if (bool == false){
 			return false;
