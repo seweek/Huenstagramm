@@ -139,6 +139,12 @@ http.createServer(function(req, res) {
         res.end('\n');
 		return;
     }
+	if (url === '/static/top.css') {
+        res.writeHead(200, {'Content-Type': 'text/css'});
+        res.write(fs.readFileSync(__dirname + '/static/top.css'));
+        res.end('\n');
+		return;
+    }
 	if (url === '/') {
         res.writeHead(200, {'Content-Type': 'text/html'});
         res.write(fs.readFileSync(__dirname + '/index.html'));
