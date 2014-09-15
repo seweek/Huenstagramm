@@ -9,7 +9,7 @@ window.onload = function(){
 	var seedInput = document.getElementById("seed");
 	var iterationsInput = document.getElementById("iterations");
 	var qualityInput = document.getElementById("quality");
-	var apbut = document.getElementById("button");
+	var apbut = document.getElementById("apbut");
 	var bool = false;
 	var rawimg;
 	document.getElementById("username").value = localStorage.username;
