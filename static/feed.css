@@ -7,7 +7,7 @@ body{
 	border-radius: 10px;
 }
 .upload{
-	width: 460px;
+	width: 260px;
 	height: 40px;
 	background-color: #ff00a8;
 	-webkit-border-bottom-right-radius: 10px;
@@ -27,11 +27,11 @@ body{
 	font-size: 12pt;
 }
 .images-collection{
-	width: 460px;
+	width: 260px;
 	margin: 0 auto;
 }
 .image-container{
-	width: 460px;
+	width: 260px;
 	margin: 0 auto;
 	padding-top: 5px;
 	padding-bottom: 5px;
