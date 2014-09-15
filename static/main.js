@@ -10,14 +10,14 @@ window.onload = function(){
 	var rawimg;
 	document.getElementById("username").value = localStorage.username;
 	function random(){
-		return Math.floor(Math.random()*101);)
+		return (Math.floor(Math.random()*101));)
 	}
 	function applyGlitch(){
 		var ctx;
 		var ctx = canvas.getContext('2d');
 		ctx.putImageData(rawimg, 0,0);
 		var data = ctx.getImageData(0,0,canvas.width, canvas.height);
-		glitch(data, {amount: random(), seed: random(), iterations: random(), quality: random()}, function(data){
+		glitch(data, {amount: random();, seed: random();, iterations: random();, quality: random();}, function(data){
 			ctx.putImageData(data, 0, 0);
 			imagedata.value = canvas.toDataURL('image/jpg');
 		})
