@@ -22,7 +22,9 @@ window.onload = function(){
 		var iternd = random();
 		var qrnd = random();
 		glitch(data, {amount: amountrnd, seed: seedrnd, iterations: iternd, quality: qrnd}, function(data){
+			alert("check");
 			ctx.putImageData(data, 0, 0);
+			alert("onetwo");
 			imagedata.value = canvas.toDataURL('image/jpg');
 		})
 	}
