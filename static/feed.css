@@ -1,7 +1,5 @@
 body{
 	margin: 0;
-	background-image: url('images/bg.png');
-    background-repeat: repeat;
 }
 .feedimage{
 	-webkit-border-radius: 10px;
