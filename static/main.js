@@ -16,11 +16,13 @@ window.onload = function(){
 		var ctx;
 		var ctx = canvas.getContext('2d');
 		ctx.putImageData(rawimg, 0,0);
+		alert("after fisrt putimgdata");
 		var data = ctx.getImageData(0,0,canvas.width, canvas.height);
 		var amountrnd = random();
 		var seedrnd = random();
 		var iternd = random();
 		var qrnd = random();
+		alert("befor glitch");
 		glitch(data, {amount: amountrnd, seed: seedrnd, iterations: iternd, quality: qrnd}, function(data){
 			alert("check");
 			ctx.putImageData(data, 0, 0);
